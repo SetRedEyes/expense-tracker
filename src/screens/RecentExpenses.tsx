@@ -1,7 +1,5 @@
 import { Text } from "react-native";
 
-const RecentExpenses = () => {
-    return (
-        <Text>RecentExpenses</Text>
-    );
-    }
+export const RecentExpenses = () => {
+  return <Text>RecentExpenses</Text>;
+};

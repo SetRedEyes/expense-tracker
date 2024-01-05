@@ -1,5 +1,5 @@
 import { Text } from "react-native";
 
-const ManageExpense = () => {
+export const ManageExpense = () => {
   return <Text>Manage Expense</Text>;
 };
