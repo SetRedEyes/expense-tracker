@@ -25,7 +25,7 @@ const DUMMY_EXPENSES: IExpenses[] = [
   {
     id: "e4",
     description: "A book",
-    amount:14.99,
+    amount: 14.99,
     date: new Date("2023-11-11"),
   },
   {
@@ -48,7 +48,7 @@ export const ExpensesOutput = ({
   return (
     <View>
       <ExpensesSummary expenses={expenses} periodName={expensesPeriod} />
-      <ExpensesList />
+      <ExpensesList expenses={expenses} />
     </View>
   );
 };

@@ -1,5 +1,22 @@
-import { FlatList } from "react-native";
+import { FlatList, Text } from "react-native";
+import { IExpenses } from "../../types/Expenses";
 
-export const ExpensesList = () => {
-  return <FlatList />;
+interface ExpensesListProps {
+  expenses: IExpenses[];
+}
+
+export const ExpensesList = ({ expenses }: ExpensesListProps) => {
+  const renderItem = ({ item }: { item: IExpenses }) => {
+    return <Text>{item.description}</Text>;
+  };
+
+  const keyExtractor = (item: IExpenses) => item.id.toString();
+
+  return (
+    <FlatList
+      data={expenses}
+      renderItem={renderItem}
+      keyExtractor={keyExtractor}
+    />
+  );
 };
