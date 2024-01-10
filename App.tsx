@@ -4,7 +4,7 @@ import { MainNavigatorContainer } from "./src/navigators/MainNavigatorContainer"
 export default function App() {
   return (
     <>
-      <StatusBar style='auto' />
+      <StatusBar style='light' />
       <MainNavigatorContainer />
     </>
   );
