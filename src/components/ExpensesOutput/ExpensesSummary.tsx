@@ -1,10 +1,17 @@
+import { useMemo } from "react";
 import { Text, View } from "react-native";
 
-export const ExpensesSummary = () => {
+export const ExpensesSummary = ({ expenses, periodName }) => {
+  const expensesSum: number = useMemo(() => {
+    expenses
+      .reduce((sum: number, expense) => sum + expense.amount, 0)
+      .toFixed(2);
+  }, []);
+
   return (
     <View>
-      <Text>Last 7 days</Text>
-      <Text>$177.55</Text>
+      <Text>{periodName}</Text>
+      <Text>${expensesSum}</Text>
     </View>
   );
 };
