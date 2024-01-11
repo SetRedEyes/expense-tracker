@@ -1,16 +1,23 @@
 import { FlatList, Text } from "react-native";
-import { IExpenses } from "../../types/Expenses";
+import { IExpense } from "../../types/Expense";
+import { ExpenseListItem } from "./ExpenseListItem";
 
 interface ExpensesListProps {
-  expenses: IExpenses[];
+  expenses: IExpense[];
 }
 
 export const ExpensesList = ({ expenses }: ExpensesListProps) => {
-  const renderItem = ({ item }: { item: IExpenses }) => {
-    return <Text>{item.description}</Text>;
+  const renderItem = ({ item }: { item: IExpense }) => {
+    return (
+      <ExpenseListItem
+        description={item.description}
+        date={item.date}
+        amount={item.amount}
+      />
+    );
   };
 
-  const keyExtractor = (item: IExpenses) => item.id.toString();
+  const keyExtractor = (item: IExpense) => item.id.toString();
 
   return (
     <FlatList
@@ -20,4 +27,3 @@ export const ExpensesList = ({ expenses }: ExpensesListProps) => {
     />
   );
 };
-

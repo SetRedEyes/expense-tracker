@@ -1,10 +1,10 @@
 import { useMemo } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { IExpenses } from "../../types/Expenses";
+import { IExpense } from "../../types/Expense";
 import { COLORS } from "../../constants/colors";
 
 interface ExpensesSummaryProps {
-  expenses: IExpenses[];
+  expenses: IExpense[];
   periodName: string;
 }
 
